@@ -11,7 +11,7 @@ current_date = datetime.now()
 worksheet = sh.worksheet("Stat")
 tunnel_names = worksheet.col_values(1) 
 
-res = requests.request('get', 'https://quiet-vpn.ru:1500/ispmgr?authinfo=LOGIN:PASS&func=wireguard.user&out=xml')
+res = requests.request('get', 'https://IP:1500/ispmgr?authinfo=LOGIN:PASS&func=wireguard.user&out=xml')
 root = ET.fromstringlist(res)
 for elem in root.findall('elem'):
     sentsize = elem.find('sentsize').text
